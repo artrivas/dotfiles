@@ -13,5 +13,5 @@ Then run these commands:
 
 ```bash
 chmod u+x nvim.appimage && ./nvim.appimage
-sudo mv neovim.appimage /usr/local/bin/nvim
+sudo mv nvim.appimage /usr/local/bin/nvim
 ```
