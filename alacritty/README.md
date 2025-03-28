@@ -1,39 +1,28 @@
 # Alacritty
-
-Alacritty configuration
-
-## Fonts
-
-Download a [nerd font](https://www.nerdfonts.com/).
-
-Then run this command
-
-```bash
-mkdir ~/.local/share/fonts --In case you do not it
-sudo mv *.ttf ~/.local/share/fonts
-sudo mv *.otf ~/.local/share/fonts
-```
-
 ## Usage
-In this case I use JetBrains Mono Nerd Font in my alacritty.yml file. You should put the font you've downloaded.
+In this case I use JetBrains Mono Nerd Font in my alacritty.toml in ```~/.config/alacritty``` file. You should put the font you've downloaded.
 
-```yml
-# Font configuration
-font:
-  normal:
-    family: JetBrains Mono Nerd Font
-    style: Medium
-  bold:
-    family: JetBrains Mono Nerd Font
-    style: Medium
-  italic:
-    family: JetBrains Mono Nerd Font
-    style: Medium
-  bold_italic:
-    family: JetBrains Mono Nerd Font
-    style: Medium
-draw_bold_text_with_bright_colors: true
+```
+[font]
 
+normal.family = "JetBrains Mono Nerd Font"
+bold.family = "JetBrains Mono Nerd Font"
+italic.family = "JetBrains Mono Nerd Font"
+bold_italic.family = "JetBrains Mono Nerd Font"
+
+size = 15.0
+
+[general]
+import = ["./dracula.toml"]
+
+[window]
+decorations = "None"
+opacity = 0.8
+startup_mode = "Fullscreen"
+
+[selection]
+save_to_clipboard = true
 
 
 ```
+For the theme I used [dracula](https://draculatheme.com/alacritty).
