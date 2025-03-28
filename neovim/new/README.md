@@ -28,7 +28,8 @@ Run this
 ```bash
 sudo apt install g++-12
 ```
-## GCC compiler
+## Problems
+### GCC compiler
 Sometimes I've this error: "AddressSanitizer:DEADLYSIGNAL" and in this [discussion](https://github.com/actions/runner-images/issues/9491) they say one of the solutions is to upgrade LLVM. I'm not pretty sure if that would work, because from what I understood LLVM is related to clang and not to GCC.
 To upgrade LLVM use the next commands:
 ```bash
@@ -38,6 +39,21 @@ chmod +x llvm.sh
 sudo ./llvm.sh <version> #Could be either 16, 17 or above
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-17 100
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-17 100
+```
+Update: It didn't work, so we try to upgrade gcc compiler by doing this:
+```bash
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install gcc-13 g++-13
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+
+```
+### Copy-Paste on main clipboard
+To copy and paste on the main clipboard, run these commands:
+```bash
+sudo apt install xclip
+sudo apt install xsel
 ```
 # To be finished
 - vim colors
